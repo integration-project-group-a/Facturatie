@@ -11,11 +11,11 @@ namespace brolTest
     {
         public async System.Threading.Tasks.Task CreateInvoice(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create("http://10.3.56.22/api/v1/invoices");
+            var request = (HttpWebRequest)WebRequest.Create("http://<url>/api/v1/invoices");
 
             request.ContentType = "application/json";
             request.Method = "POST";
-            request.Headers.Add("X-Ninja-Token", "a0tibzaccmgeset77nx8bgo0q7o9rwlk");
+            request.Headers.Add("X-Ninja-Token", "<token>");
 
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {
@@ -33,11 +33,11 @@ namespace brolTest
 
         public async System.Threading.Tasks.Task GetInvoice(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create($"http://10.3.56.22/api/v1/invoices/{id}");
+            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/invoices/{id}");
 
             request.ContentType = "application/json";
             request.Method = "GET";
-            request.Headers.Add("X-Ninja-Token", "a0tibzaccmgeset77nx8bgo0q7o9rwlk");
+            request.Headers.Add("X-Ninja-Token", "<token>");
 
             var response = (HttpWebResponse)request.GetResponse();
             using (var streamReader = new StreamReader(response.GetResponseStream()))
@@ -49,11 +49,11 @@ namespace brolTest
 
         public async System.Threading.Tasks.Task UpdateInvoice(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create($"http://10.3.56.22/api/v1/invoices/{id}");
+            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/invoices/{id}");
 
             request.ContentType = "application/json";
             request.Method = "PUT";
-            request.Headers.Add("X-Ninja-Token", "a0tibzaccmgeset77nx8bgo0q7o9rwlk");
+            request.Headers.Add("X-Ninja-Token", "<token>");
 
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {
@@ -64,11 +64,11 @@ namespace brolTest
         }
         public async System.Threading.Tasks.Task DeleteInvoice(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create($"http://10.3.56.22/api/v1/invoices/{id}?action=delete");
+            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/invoices/{id}?action=delete");
 
             request.ContentType = "application/json";
             request.Method = "PUT";
-            request.Headers.Add("X-Ninja-Token", "a0tibzaccmgeset77nx8bgo0q7o9rwlk");
+            request.Headers.Add("X-Ninja-Token", "<token>");
 
             var response = (HttpWebResponse)request.GetResponse();
             using (var streamReader = new StreamReader(response.GetResponseStream()))
@@ -78,11 +78,11 @@ namespace brolTest
         }
         public async System.Threading.Tasks.Task ArchiveInvoice(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create($"http://10.3.56.22/api/v1/invoices/{id}?action=archive");
+            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/invoices/{id}?action=archive");
 
             request.ContentType = "application/json";
             request.Method = "PUT";
-            request.Headers.Add("X-Ninja-Token", "a0tibzaccmgeset77nx8bgo0q7o9rwlk");
+            request.Headers.Add("X-Ninja-Token", "<token>");
 
             var response = (HttpWebResponse)request.GetResponse();
             using (var streamReader = new StreamReader(response.GetResponseStream()))
@@ -92,11 +92,11 @@ namespace brolTest
         }
         public async System.Threading.Tasks.Task RestoreInvoice(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create($"http://10.3.56.22/api/v1/invoices/{id}?action=restore");
+            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/invoices/{id}?action=restore");
 
             request.ContentType = "application/json";
             request.Method = "PUT";
-            request.Headers.Add("X-Ninja-Token", "a0tibzaccmgeset77nx8bgo0q7o9rwlk");
+            request.Headers.Add("X-Ninja-Token", "<token>");
 
             var response = (HttpWebResponse)request.GetResponse();
             using (var streamReader = new StreamReader(response.GetResponseStream()))
