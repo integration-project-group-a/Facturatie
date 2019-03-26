@@ -5,13 +5,13 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace brolTest
+namespace Facturatie
 {
-    class Credit
+    class Invoice
     {
-        public async System.Threading.Tasks.Task CreateCredit(int id)
+        public static void CreateInvoice(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create("http://<url>/api/v1/credits");
+            var request = (HttpWebRequest)WebRequest.Create("http://<url>/api/v1/invoices");
 
             request.ContentType = "application/json";
             request.Method = "POST";
@@ -19,7 +19,7 @@ namespace brolTest
 
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {
-                string json = "{\"amount\": \"10\", \"private_notes\": \"money money money\",\"public_notes\": \"just give me money\",\"client_id\": \"" + id + "\"}";
+                string json = "{\"client_id\": \"" + id + "\", \"discount\": \"0\", \"due_date\": \"2020-05-12\", \"invoice_items\":[{\"id\": \"1\", \"product_key\": \"test\", \"cost\": \"12\", \"qty\": \"15\"}]}";
 
                 streamWriter.Write(json);
             }
@@ -31,9 +31,9 @@ namespace brolTest
             }
         }
 
-        public async System.Threading.Tasks.Task GetCredit(int id)
+        public static void GetInvoice(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/credits/{id}");
+            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/invoices/{id}");
 
             request.ContentType = "application/json";
             request.Method = "GET";
@@ -47,9 +47,11 @@ namespace brolTest
             }
         }
 
-        public async System.Threading.Tasks.Task UpdateCredit(int id)
+        //Werkt niet
+        /*
+        public static void UpdateInvoice(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/credits/{id}");
+            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/invoices/{id}");
 
             request.ContentType = "application/json";
             request.Method = "PUT";
@@ -57,14 +59,16 @@ namespace brolTest
 
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {
-                string json = "{\"amount\":\"15\",\"private_notes\":\"money³\",\"public_notes\":\"just give me money\",\"client_id\":\"2\"}";
+                string json = "{\"id\": \"" + id + "\", \"discount\": \"0\", \"due_date\": \"2019-05-12\", \"invoice_items\":[{\"id\": \"1\", \"product_key\": \"test\", \"cost\": \"12\", \"qty\": \"15\"}]}";
 
                 streamWriter.Write(json);
             }
         }
-        public async System.Threading.Tasks.Task DeleteCredit(int id)
+        */
+
+        public static void DeleteInvoice(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/credits/{id}?action=delete");
+            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/invoices/{id}?action=delete");
 
             request.ContentType = "application/json";
             request.Method = "PUT";
@@ -76,9 +80,9 @@ namespace brolTest
                 var result = streamReader.ReadToEnd();
             }
         }
-        public async System.Threading.Tasks.Task ArchiveCredit(int id)
+        public static void ArchiveInvoice(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/credits/{id}?action=archive");
+            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/invoices/{id}?action=archive");
 
             request.ContentType = "application/json";
             request.Method = "PUT";
@@ -90,9 +94,9 @@ namespace brolTest
                 var result = streamReader.ReadToEnd();
             }
         }
-        public async System.Threading.Tasks.Task RestoreCredit(int id)
+        public static void RestoreInvoice(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/credits/{id}?action=restore");
+            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/invoices/{id}?action=restore");
 
             request.ContentType = "application/json";
             request.Method = "PUT";
@@ -104,16 +108,6 @@ namespace brolTest
                 var result = streamReader.ReadToEnd();
             }
         }
-
-        //public static void Main()
-        //{
-        //    Credit I1 = new Credit();
-        //    //Task task1 = I1.CreateCredit(38); //ok
-        //    //Task task1 = I1.GetCredit(1); //ok
-        //    Task task1 = I1.UpdateCredit(2);
-        //    //Task task1 = I1.ArchiveCredit(1); //ok
-        //    //Task task1 = I1.DeleteCredit(1); //ok
-        //    //Task task1 = I1.RestoreCredit(2); //ok
-        //}
     }
 }
+

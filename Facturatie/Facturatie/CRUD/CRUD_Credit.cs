@@ -5,13 +5,13 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestAPI4
+namespace Facturatie
 {
-    class Client
+    class Credit
     {
-        public async System.Threading.Tasks.Task CreateClient()
+        public async static void CreateCredit(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create("http://<url>/api/v1/clients");
+            var request = (HttpWebRequest)WebRequest.Create("http://<url>/api/v1/credits");
 
             request.ContentType = "application/json";
             request.Method = "POST";
@@ -19,9 +19,7 @@ namespace TestAPI4
 
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {
-                //string json = "{\"name\":\"Client\",\"contact\":{\"email\":\"test@example.com\"}}";
-
-                string json = "{\"name\":\"Client\",\"contact\":{\"email\":\"email@test.com\",\"first_name\":\"Michael\",\"last_name\":\"Johnson\"}}";
+                string json = "{\"amount\": \"10\", \"private_notes\": \"money money money\",\"public_notes\": \"just give me money\",\"client_id\": \"" + id + "\"}";
 
                 streamWriter.Write(json);
             }
@@ -33,9 +31,9 @@ namespace TestAPI4
             }
         }
 
-        public async System.Threading.Tasks.Task GetClient(int id)
+        public static void GetCredit(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/clients/{id}"); //geeft enkel op id
+            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/credits/{id}");
 
             request.ContentType = "application/json";
             request.Method = "GET";
@@ -49,10 +47,11 @@ namespace TestAPI4
             }
         }
 
-        //id moet in de json string en de url van de api (http:://..../clients/38)
-        public async System.Threading.Tasks.Task UpdateClient(int id)
+        //Werkt niet
+        /*
+        public async System.Threading.Tasks.Task UpdateCredit(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/clients/{id}");
+            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/credits/{id}");
 
             request.ContentType = "application/json";
             request.Method = "PUT";
@@ -60,23 +59,16 @@ namespace TestAPI4
 
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {
-                //string json = "{\"name\":\"Client\",\"contact\":{\"email\":\"test@example.com\"}}";
-
-                string json = "\"name\":\"Client\",\"contact\":{\"email\":\"example@test.com\",\"first_name\":\"Michael\",\"last_name\":\"Johnson\"}}";
+                string json = "{\"amount\":\"15\",\"private_notes\":\"money³\",\"public_notes\":\"just give me money\",\"client_id\":\"2\"}";
 
                 streamWriter.Write(json);
             }
-
-            var response = (HttpWebResponse)request.GetResponse();
-            using (var streamReader = new StreamReader(response.GetResponseStream()))
-            {
-                var result = streamReader.ReadToEnd();
-            }
         }
+        */
 
-        public async System.Threading.Tasks.Task ArchiveClient(int id)
+        public static void DeleteCredit(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/clients/{id}?action=archive");
+            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/credits/{id}?action=delete");
 
             request.ContentType = "application/json";
             request.Method = "PUT";
@@ -88,10 +80,9 @@ namespace TestAPI4
                 var result = streamReader.ReadToEnd();
             }
         }
-
-        public async System.Threading.Tasks.Task DeleteClient(int id)
+        public static void ArchiveCredit(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/clients/{id}?action=delete");
+            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/credits/{id}?action=archive");
 
             request.ContentType = "application/json";
             request.Method = "PUT";
@@ -103,10 +94,9 @@ namespace TestAPI4
                 var result = streamReader.ReadToEnd();
             }
         }
-
-        public async System.Threading.Tasks.Task RestoreClient(int id)
+        public static void RestoreCredit(int id)
         {
-            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/clients/{id}?action=restore");
+            var request = (HttpWebRequest)WebRequest.Create($"http://<url>/api/v1/credits/{id}?action=restore");
 
             request.ContentType = "application/json";
             request.Method = "PUT";
@@ -117,17 +107,6 @@ namespace TestAPI4
             {
                 var result = streamReader.ReadToEnd();
             }
-        }
-
-        public static void Main()
-        {
-            Client l1 = new Client();
-            //Task task1 = l1.CreateClient();
-            Task task1 = l1.GetClient(38);
-            //Task task1 = l1.UpdateClient();
-            //Task task1 = l1.ArchiveClient(38);
-            //Task task1 = l1.DeleteClient(38);
-            //Task task1 = l1.RestoreClient(38);
         }
     }
 }
