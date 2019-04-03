@@ -6,3 +6,6 @@ C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Facturatie\obj\Debug\net
 C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Facturatie\obj\Debug\netcoreapp2.2\Facturatie.csproj.CoreCompileInputs.cache
 C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Facturatie\obj\Debug\netcoreapp2.2\Facturatie.AssemblyInfoInputs.cache
 C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Facturatie\obj\Debug\netcoreapp2.2\Facturatie.AssemblyInfo.cs
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Facturatie\bin\Debug\netcoreapp2.2\Facturatie.pdb
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Facturatie\obj\Debug\netcoreapp2.2\Facturatie.dll
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Facturatie\obj\Debug\netcoreapp2.2\Facturatie.pdb
