@@ -13,7 +13,7 @@ namespace Facturatie.Receiver
     {
         public static void Receive()
         {
-            var factory = new ConnectionFactory() { HostName = "localhost" };
+            var factory = new ConnectionFactory() { HostName = "10.3.56.27", Password = "ehb", UserName = "manager"};
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
@@ -39,7 +39,7 @@ namespace Facturatie.Receiver
 
                     Console.WriteLine(jsonText);
 
-                    dynamic obj = JObject.Parse(jsonText);      //Json to JObject
+                    dynamic obj = JObject.Parse(jsonText.ToLower());      //Json to JObject
 
                     string name = obj.datastructure.name.firstname;
                     string firstname = obj.datastructure.name.firstname;

@@ -10,7 +10,7 @@ namespace Facturatie.Sender
     {
         public static void Send()
         {
-            var factory = new ConnectionFactory() { HostName = "localhost" };
+            var factory = new ConnectionFactory() { HostName = "10.3.56.27", Password = "ehb", UserName = "manager" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
