@@ -9,13 +9,13 @@ namespace Facturatie
 {
     class Client
     {
-        public static void CreateClient(string name, string email, string firstname, string lastname)
+        public static void CreateClient(string name = "", string email = "", string firstname = "", string lastname = "")
         {
-            var request = (HttpWebRequest)WebRequest.Create("http://<url>/api/v1/clients");
+            var request = (HttpWebRequest)WebRequest.Create("http://10.3.56.22/api/v1/clients");
 
             request.ContentType = "application/json";
             request.Method = "POST";
-            request.Headers.Add("X-Ninja-Token", "<token>");
+            request.Headers.Add("X-Ninja-Token", "a0tibzaccmgeset77nx8bgo0q7o9rwlk");
 
             using (var streamWriter = new StreamWriter(request.GetRequestStream()))
             {

@@ -9,11 +9,11 @@ using System.Xml;
 
 namespace Facturatie.Receiver
 {
-    class ReceiverFacturatie
+    public class ReceiverFacturatie
     {
         public static void Receive()
         {
-            var factory = new ConnectionFactory() { HostName = "10.3.56.27", Password = "ehb", UserName = "manager"};
+            var factory = new ConnectionFactory() { HostName = "10.3.56.27", Password = "ehb", UserName = "manager" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
@@ -32,6 +32,8 @@ namespace Facturatie.Receiver
                     var body = ea.Body;
                     var message = Encoding.UTF8.GetString(body);
 
+                    Console.WriteLine(message);
+
                     XmlDocument doc = new XmlDocument();
                     doc.LoadXml(message);
 
@@ -46,7 +48,11 @@ namespace Facturatie.Receiver
                     string lastname = obj.datastructure.name.lastname;
                     string email = obj.datastructure.email;
 
+                    
                     Client.CreateClient(name, email, firstname, lastname); //enkel voor create client voorlopig
+                    
+
+                    
                 };
                 channel.BasicConsume(queue: queueName, autoAck: true, consumer: consumer);
                 Console.ReadLine();

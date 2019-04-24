@@ -1,0 +1,9 @@
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\FacturatieLibrary\bin\Debug\netcoreapp2.2\FacturatieLibrary.deps.json
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\FacturatieLibrary\bin\Debug\netcoreapp2.2\FacturatieLibrary.dll
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\FacturatieLibrary\obj\Debug\netcoreapp2.2\FacturatieLibrary.csprojAssemblyReference.cache
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\FacturatieLibrary\obj\Debug\netcoreapp2.2\FacturatieLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\FacturatieLibrary\obj\Debug\netcoreapp2.2\FacturatieLibrary.AssemblyInfoInputs.cache
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\FacturatieLibrary\obj\Debug\netcoreapp2.2\FacturatieLibrary.AssemblyInfo.cs
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\FacturatieLibrary\bin\Debug\netcoreapp2.2\FacturatieLibrary.pdb
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\FacturatieLibrary\obj\Debug\netcoreapp2.2\FacturatieLibrary.dll
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\FacturatieLibrary\obj\Debug\netcoreapp2.2\FacturatieLibrary.pdb

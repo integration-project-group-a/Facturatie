@@ -1,0 +1,14 @@
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Sender\bin\Debug\netcoreapp2.2\Sender.deps.json
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Sender\bin\Debug\netcoreapp2.2\Sender.runtimeconfig.json
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Sender\bin\Debug\netcoreapp2.2\Sender.runtimeconfig.dev.json
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Sender\bin\Debug\netcoreapp2.2\Sender.dll
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Sender\bin\Debug\netcoreapp2.2\Sender.pdb
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Sender\bin\Debug\netcoreapp2.2\FacturatieLibrary.dll
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Sender\bin\Debug\netcoreapp2.2\FacturatieLibrary.pdb
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Sender\obj\Debug\netcoreapp2.2\Sender.csprojAssemblyReference.cache
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Sender\obj\Debug\netcoreapp2.2\Sender.csproj.CoreCompileInputs.cache
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Sender\obj\Debug\netcoreapp2.2\Sender.AssemblyInfoInputs.cache
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Sender\obj\Debug\netcoreapp2.2\Sender.AssemblyInfo.cs
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Sender\obj\Debug\netcoreapp2.2\Sender.csproj.CopyComplete
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Sender\obj\Debug\netcoreapp2.2\Sender.dll
+C:\Users\Michael\Documents\GitHub\Facturatie\Facturatie\Sender\obj\Debug\netcoreapp2.2\Sender.pdb

@@ -16,7 +16,36 @@ namespace Facturatie.Sender
             {
                 channel.ExchangeDeclare(exchange: "logs", type: "fanout");
                 Int32 unixTimestamp = (Int32)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-                String xmlStr = "<!DOCTYPE Message SYSTEM \"messageError.dtd\"><MessageError><header><MessageType>MessageError</MessageType><description>Give information about errors with or in the rabbit MQ messages</description><sender>monitor</sender></header><datastructure><UUID>1</UUID><sendersystem>Invoice</sendersystem><destination>all</destination><error>404</error><importance>yes</importance><timestamp>" + unixTimestamp + "</timestamp><version>1</version><extraField></extraField></datastructure></MessageError>";
+                String xmlStr = @"<Visitor>
+                                <header>
+                                        <!-- type of message -->
+                                        <MessageType>Visitor</MessageType>
+                                        <!--What your Message does -->
+                                        <description>Creation of a visitor</description>
+                                        <!--Who sent it-->
+                                        <!--(fronted, crm, facturatie, kassa, monitor, planning, uuid) -->
+                                        <sender></sender> <!-- kassa, crm, front-end -->
+                                </header>
+                                <datastructure>
+                                        <!-- required fields = UUID name + email & hashing. -->
+                                        <UUID/> <!-- id of the user -->
+                                        <name>
+                                                <firstname>lol</firstname>
+                                                <lastname>lol</lastname>
+                                        </name> <!-- kassa  , front-end  -->
+                                        <email>www.dfef@dada.com</email>
+                                        <timestamp/>
+                                        <version/>
+                                        <isActive/>
+                                        <banned/>
+                                        <!-- Not required fields -->
+                                        <geboortedatum/>
+                                        <btw-nummer/>
+                                        <gsm-nummer/>
+                                        <GDPR/>
+                                        <extraField/>
+                                </datastructure>
+                        </Visitor>";
 
                 var messagetest = XDocument.Parse(xmlStr);
 
