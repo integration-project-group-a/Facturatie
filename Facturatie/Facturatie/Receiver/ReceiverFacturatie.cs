@@ -50,7 +50,7 @@ namespace Facturatie.Receiver
 
                     
                     Client.CreateClient(name, email, firstname, lastname); //enkel voor create client voorlopig
-                    
+                    Client.GetClient(email);
 
                     
                 };

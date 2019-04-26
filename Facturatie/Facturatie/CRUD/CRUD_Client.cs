@@ -49,6 +49,22 @@ namespace Facturatie
             }
         }
 
+        public static void GetClient(string email)
+        {
+            var request = (HttpWebRequest)WebRequest.Create($"http://10.3.56.22/api/v1/clients?email={email}"); //geeft enkel op email
+
+            request.ContentType = "application/json";
+            request.Method = "GET";
+            request.Headers.Add("X-Ninja-Token", "a0tibzaccmgeset77nx8bgo0q7o9rwlk");
+
+            var response = (HttpWebResponse)request.GetResponse();
+            using (var streamReader = new StreamReader(response.GetResponseStream()))
+            {
+                var result = streamReader.ReadToEnd();
+                Console.WriteLine(result);
+            }
+        }
+
         //id moet in de json string en de url van de api (http://..../clients/38)
         public static void UpdateClient(int id)
         {

@@ -28,7 +28,7 @@ namespace FacturatieLibrary.Sender
 			                                <firstname>Anthe</firstname>
 			                                <lastname>Boets</lastname>
 		                                </name>
-		                                <email>anthe.boets@student.ehb.be</email>
+		                                <email>anthe.boets1@student.ehb.be</email>
 		                                <GDPR>true</GDPR>
 		                                <timestamp>1555934040</timestamp>
 		                                <version>1</version>

@@ -32,14 +32,14 @@ namespace FacturatieLibrary.Receiver
                     var body = ea.Body;
                     var message = Encoding.UTF8.GetString(body);
 
-                    Console.WriteLine(message);
+                    //Console.WriteLine(message);
 
                     XmlDocument doc = new XmlDocument();
                     doc.LoadXml(message);
 
                     string jsonText = JsonConvert.SerializeXmlNode(doc, Newtonsoft.Json.Formatting.None, true);
 
-                    Console.WriteLine(jsonText);
+                    //Console.WriteLine(jsonText);
 
                     dynamic obj = JObject.Parse(jsonText.ToLower());      //Json to JObject
 
@@ -48,10 +48,16 @@ namespace FacturatieLibrary.Receiver
                     string lastname = obj.datastructure.name.lastname;
                     string email = obj.datastructure.email;
 
-                    
-                    Client.CreateClient(name, email, firstname, lastname); //enkel voor create client voorlopig
-                    
+                    //Client.CreateClient(name, email, firstname, lastname);
 
+                    string clientText = Client.GetClient(email);
+                    dynamic objClient = JObject.Parse(clientText.ToLower());
+                    Console.WriteLine(clientText);
+
+                    string idLastCreatedClient = objClient.data[0].id;
+                    Console.WriteLine(idLastCreatedClient);
+
+                    Client.GetClient(int.Parse(idLastCreatedClient));
                     
                 };
                 channel.BasicConsume(queue: queueName, autoAck: true, consumer: consumer);
