@@ -35,7 +35,7 @@ namespace FacturatieLibrary.Sender
 		                                <isActive>true</isActive>
 		                                <banned>false</banned>
 		                                <!-- Not required fields -->
-		                                <geboortedatum>1999-04-30T00:00:00+00:00</geboortedatum>
+		                                <geboortedatum>1999-04-30</geboortedatum>
 		                                <btw-nummer>BE15656464654</btw-nummer>
 		                                <gsm-nummer>015313164165468</gsm-nummer>
 		                                <extraField></extraField>
